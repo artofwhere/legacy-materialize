@@ -1,7 +1,8 @@
 ## artofwhere
 Some older artofwhere projects are still using this and will probably not move to something else without a complete rebuild.
 
-## Materialize
+---
+
 [Materialize](http://materializecss.com/), a CSS Framework based on material design
 
 ### Current Version : v0.98.2
