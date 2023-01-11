@@ -1,3 +1,8 @@
+/*!
+ * Materialize v0.98.2 (http://materializecss.com)
+ * Copyright 2014-2015 Materialize
+ * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ */
 // Check for jQuery.
 if (typeof(jQuery) === 'undefined') {
   var jQuery;
@@ -3565,6 +3570,7 @@ if (jQuery) {
 
       $newSelect.on({
         'focus': function (){
+          /*
           if ($('ul.select-dropdown').not(options[0]).is(':visible')) {
             $('input.select-dropdown').trigger('close');
           }
@@ -3579,7 +3585,7 @@ if (jQuery) {
               return $(this).text().toLowerCase() === label.toLowerCase();
             })[0];
             activateOption(options, selectedOption, true);
-          }
+          }*/
         },
         'click': function (e){
           e.stopPropagation();
@@ -5583,9 +5589,11 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
             $ELEMENT.
 
                 // On focus/click, focus onto the root to open it up.
-                on( 'focus.' + STATE.id + ' click.' + STATE.id, function( event ) {
+                on('mouseup.' + STATE.id+' touchend.' + STATE.id, function( event ) {
                     event.preventDefault()
-                    P.$root.eq(0).focus()
+                    setTimeout(function() {
+                      P.$root.eq(0).focus()
+                    }, 100);
                 }).
 
                 // Handle keyboard event based on the picker being opened or not.
@@ -5625,7 +5633,6 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
                 // When something within the root holder is clicked, stop it
                 // from bubbling to the doc.
                 'mousedown click': function( event ) {
-
                     var target = event.target
 
                     // Make sure the target isn’t the root holder so it can bubble up.
@@ -7936,7 +7943,7 @@ Picker.extend( 'pickadate', DatePicker )
         }
 
         function tap(e) {
-          e.preventDefault();
+          //e.preventDefault();
           pressed = true;
           dragged = false;
           vertical_dragged = false;
