@@ -612,9 +612,11 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
             $ELEMENT.
 
                 // On focus/click, focus onto the root to open it up.
-                on( 'focus.' + STATE.id + ' click.' + STATE.id, function( event ) {
+                on('mouseup.' + STATE.id+' touchend.' + STATE.id, function( event ) {
                     event.preventDefault()
-                    P.$root.eq(0).focus()
+                    setTimeout(function() {
+                      P.$root.eq(0).focus()
+                    }, 100);
                 }).
 
                 // Handle keyboard event based on the picker being opened or not.

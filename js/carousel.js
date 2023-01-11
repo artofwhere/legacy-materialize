@@ -340,7 +340,7 @@
         }
 
         function tap(e) {
-          e.preventDefault();
+          //e.preventDefault();
           pressed = true;
           dragged = false;
           vertical_dragged = false;

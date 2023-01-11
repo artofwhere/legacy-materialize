@@ -613,6 +613,7 @@
 
       $newSelect.on({
         'focus': function (){
+          /*
           if ($('ul.select-dropdown').not(options[0]).is(':visible')) {
             $('input.select-dropdown').trigger('close');
           }
@@ -627,7 +628,7 @@
               return $(this).text().toLowerCase() === label.toLowerCase();
             })[0];
             activateOption(options, selectedOption, true);
-          }
+          }*/
         },
         'click': function (e){
           e.stopPropagation();
